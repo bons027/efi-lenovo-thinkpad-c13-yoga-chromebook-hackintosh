@@ -35,8 +35,8 @@ An OpenCore EFI configuration for running macOS on the **Lenovo ThinkPad C13 Yog
 ### ✅ What Works
 * **Graphics Acceleration**: Full metal acceleration with AMD Radeon Vega 8 via `NootedRed.kext`.
 * **Wi-Fi & Bluetooth**: Works natively using `AirportItlwm.kext` and `IntelBluetoothFirmware.kext`.
-* **Touchpad & Touchscreen**: Full gestures and multi-touch working via `VoodooI2C.kext` and `VoodooI2CHID.kext` (run with polling via `-vi2c-force-polling`).
-* **Keyboard**: Keyboard functionality works using `VoodooPS2Controller.kext`.
+* **Touchpad**: Full gestures and multi-touch working via `VoodooI2C.kext` and `VoodooI2CHID.kext` (run with polling via `-vi2c-force-polling`).
+* **Keyboard**: Keyboard input works using `VoodooPS2Controller.kext`.
 * **Battery Status**: Shows percentage and charging status correctly via `SMCBatteryManager.kext` and `ECEnabler.kext`.
 * **Storage**: NVMe SSD works with power management thanks to `NVMeFix.kext`.
 * **USB Ports**: Mapped using `USBToolBox.kext` and `UTBMap.kext`.
@@ -49,14 +49,22 @@ An OpenCore EFI configuration for running macOS on the **Lenovo ThinkPad C13 Yog
 > [!WARNING]
 > The following features are currently non-functional or have limitations due to hardware/software constraints:
 
-1. **DRM (Digital Rights Management)**
+1. **Touchscreen Bug**
+   - Touchscreen menyala/berfungsi, tetapi sering mengalami bug hang/freezing jika digunakan.
+2. **Keyboard Backlight**
+   - Backlight keyboard mati (dalam proses fixing).
+3. **Camera (Photo Booth)**
+   - Kamera berfungsi keduanya (depan & belakang), namun tidak bisa diakses via Photo Booth karena membuat sistem restart/hang.
+4. **Audio**
+   - Audio internal mati karena hardware codec tidak didukung oleh AppleALC.
+5. **DRM (Digital Rights Management)**
    - Apple TV+, Netflix, and other DRM-protected streaming services do not work in Safari. This is a known limitation of the AMD APU graphics drivers on macOS. Workaround: Use Chromium-based browsers (e.g., Chrome, Edge) for streaming.
-2. **Sleep / Wake Stability**
+6. **Sleep / Wake Stability**
    - Sleep and wake transitions might be unstable under the MrChromebox coreboot UEFI firmware. Sometimes the laptop will experience immediate wake or fail to wake from a deep sleep state.
-3. **Chromebook Keyboard Mapping**
+7. **Chromebook Keyboard Mapping**
    - Since Chromebooks use a non-standard layout (missing top-row function keys and search/launcher instead of caps lock), some shortcut keys may not map perfectly. 
    - *Tip: Use Karabiner-Elements to customize your keyboard mappings once macOS is installed.*
-4. **Internal Microphone**
+8. **Internal Microphone**
    - The built-in microphone may require additional layout ID fine-tuning to work correctly.
 
 ---
