@@ -2,6 +2,8 @@
 
 Proyek ini mendokumentasikan eksperimen pemasangan **macOS Sequoia** pada **Lenovo ThinkPad C13 Yoga Chromebook**. Perlu dicatat bahwa perangkat ini berbasis **AMD Ryzen 5 3500C (Picasso)**, yang secara teknis tidak didukung oleh Apple. Proyek ini bersifat eksperimental dan ditujukan untuk tujuan riset.
 
+![Keterangan Foto Anda](Jepretan Layar 2026-06-21 pukul 20.51.17.png.png)
+
 ---
 
 ## 💻 Spesifikasi Hardware
